@@ -1,0 +1,18 @@
+$mainColor: #9b59b6;
+@mixin centerXY($left: 50%, $top: 50%){
+  position: absolute;
+  left: $left;
+  top: $top;
+  transform: translate(-$left, -$top);
+  -webkit-transform: translate(-$left, -$top);
+  -moz-transform: translate(-$left, -$top);
+  -ms-transform: translate(-$left, -$top);
+  -o-transform: translate(-$left, -$top);
+}
+@mixin menuFontStyle($size: 13px, $trans: uppercase){
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: $size;
+  text-transform: $trans;
+  line-height: 19px;
+}

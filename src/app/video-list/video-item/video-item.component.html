@@ -1,0 +1,134 @@
+<div [ngSwitch]="displayStyle">
+
+  <div *ngSwitchCase="'featured'" class="featured-item">
+
+    <div class="cover-bg">
+      <a class="cover">
+        <img
+          [src]="video.imagePath"
+          class="img-responsive" alt="">
+        <span class="format-action large"><i class="fa fa-play"></i></span>
+      </a>
+
+      <div class="featured-video-nav">
+        <a class="prev"><i class="fa fa-angle-left"></i></a>
+        <a class="next"><i class="fa fa-angle-right"></i></a>
+      </div>
+    </div>
+
+    <div class="featured-info container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="featured-info-bg">
+            <div class="entry-header">
+              <span class="entry-category" [class.shy]="isShy['category']"><a href="#">{{video.category}}</a></span>
+              <h2
+                class="entry-title h1"
+                [class.shy]="isShy.title"
+                (mouseenter)="shyAllExcept('title')"
+                (mouseleave)="shyNone()">
+                <a href="#">{{video.title}}</a>
+              </h2>
+              <div class="entry-meta" [class.shy]="isShy['meta']">
+                <div class="meta-item meta-author">
+                  <span class="vcard author"><a href="#" class="meta-icon">{{video.author}}</a></span>
+                </div>
+                <div class="meta-item meta-date"><span class="updated meta-icon">{{video.createdAt}}</span></div>
+              </div>
+            </div>
+
+            <div class="entry-actions">
+              <a href="#"
+                 class="action-item comments"
+                 [class.shy]="isShy['comments']"
+                 (mouseenter)="shyAllExcept('comments')"
+                 (mouseleave)="shyNone()">
+                3 comments
+              </a>
+              <a class="action-item watch-later"
+                 href="#"
+                 [class.shy]="isShy['watchLater']"
+                 (mouseenter)="shyAllExcept('watchLater')"
+                 (mouseleave)="shyNone()">
+                <i class="fv fv-added"></i>
+                <span class="add hidden">Watch Later</span>
+                <span class="remove">Remove</span>
+              </a>
+              <a class="action-item cinema-mode"
+                 href="#"
+                 [class.shy]="isShy['cinemaMode']"
+                 (mouseenter)="shyAllExcept('cinemaMode')"
+                 (mouseleave)="shyNone()">
+                <i class="fv fv-fullscreen"></i> Cinema Mode
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <article *ngSwitchCase="'stacked'" class="lay-horizontal">
+    <div class="row">
+
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="entry-image">
+          <a href="http://demo.mekshq.com/vlog/?p=92" title="Take advantage of different weather forecasts">
+            <img width="366" height="205"
+                 src="http://demo.mekshq.com/vlog/wp-content/uploads/2016/04/vlog014-366x205.jpg"
+                 class="img-responsive" alt="">
+            <div class="vlog-labels medium"><span class="vlog-format-label">Gallery</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="entry-header">
+          <span class="entry-category">
+            <a href="http://demo.mekshq.com/vlog/?cat=8" class="vlog-cat-8">Technology</a>
+          </span>
+          <h2 class="entry-title h2">
+            <a href="http://demo.mekshq.com/vlog/?p=92">Take advantage of different weather forecasts</a>
+          </h2>
+          <div class="entry-meta">
+            <div class="meta-item meta-date">
+              <span class="updated meta-icon">3 days ago</span>
+            </div>
+            <div class="meta-item meta-comments">
+              <a href="http://demo.mekshq.com/vlog/?p=92#comments">2 comments</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="entry-content">
+          <p>
+            Completely re-engineer go forward platforms and fully tested process improvements. Professionally mesh
+            quality synergy via diverse potentialities. Competently benchmark...
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article *ngSwitchDefault class="thumb-videos col-lg-4 col-sm-4 col-md-4 col-xs-12">
+
+    <div class="entry-image">
+      <a href="#" [title]="video.title">
+        <img [src]="video.imageThumbPath" class="img-responsive" alt="">
+        <span class="format-action small"><i class="fa fa-play"></i></span>
+      </a>
+    </div>
+
+    <div class="entry-header">
+      <h2 class="entry-title h5"><a href="#">{{video.title}}</a></h2>
+    </div>
+
+    <div class="entry-meta">
+      <span class="meta-item"><span class="count">6</span>videos</span>
+    </div>
+
+  </article>
+
+
+</div>

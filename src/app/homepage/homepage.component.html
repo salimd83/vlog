@@ -1,0 +1,91 @@
+<app-header></app-header>
+
+<app-video-item [video]="featuredVideo" [displayStyle]="'featured'"></app-video-item>
+
+<div class="featured-playlist container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="head-title">
+        <h4 class="text-uppercase">Featured Playlist</h4>
+      </div>
+    </div>
+
+    <app-video-item *ngFor="let video of videoPlaylist" [video]="video"></app-video-item>
+  </div>
+</div>
+
+<div class="section vlog-no-sid bg">
+  <div class="container">
+    <div class="vlog-content">
+      <div class="row row-eq-height">
+        <div class="vlog-module module-text col-lg-12 col-md-12 col-sm-12 col-xs-12" id="vlog-module-1-0">
+          <div class="vlog-txt-module">
+            <div class="text-center" style="margin: 0 auto; max-width: 768px;">
+              <h2>You will love Vlog</h2>
+              <p>
+                Vlog is a carefully crafted WordPress theme with a focus on your video content. It will suit the needs
+                of any personal video blog, all the way to complex magazine websites. Whether you need a website for
+                video blogging, video tutorials and lessons or any sort of viral video sharing, Vlog is the perfect
+                choice. YouTube, Vimeo, Dailymotion and other common video content never looked better!
+              </p>
+              <a class="button" href="#">Purchase now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h4>Latest Video</h4>
+      <app-video-item *ngFor="let video of videoPlaylist" [video]="video" [displayStyle]="'stacked'"></app-video-item>
+    </div>
+    <div class="col-md-4">
+      <aside>
+        <div id="categories-2" class="widget widget_categories">
+          <h4 class="widget-title h5"><span>Categories</span></h4>
+          <ul>
+            <li class="cat-item"><a href="#">Entertainment<span class="vlog-count">7</span></a></li>
+            <li class="cat-item"><a href="#">Fashion<span class="vlog-count">7</span></a></li>
+            <li class="cat-item"><a href="#">Food & Drink<span class="vlog-count">7</span></a></li>
+            <li class="cat-item"><a href="#">Sport<span class="vlog-count">7</span></a></li>
+            <li class="cat-item"><a href="#">Technology<span class="vlog-count">7</span></a></li>
+            <li class="cat-item"><a href="#">Travel<span class="vlog-count">7</span></a></li>
+          </ul>
+        </div>
+
+        <div class="highlight">
+          <h4 class="h5"><span>Newsletter</span></h4>
+          <div class="newsletter">
+            <form id="form-wysija-4" method="post" action="#wysija" class="widget_wysija">
+              <p>Stay ahead of the game. Subscribe to our FREE newsletter now!</p>
+              <div class="form-group">
+                <input type="text"
+                       name="email"
+                       class="form-control"
+                       title="Your email address"
+                       placeholder="Your email address" value="">
+              </div>
+              <input class="button" type="submit" value="Subscribe!">
+            </form>
+          </div>
+        </div>
+
+        <div id="text-4" class="widget widget_text">
+          <h4 class="widget-title h5">Submit your video</h4>
+          <div class="textwidget">
+            <p>
+              Would you like to share your creativity with the world? Submit your video by clicking on the button below.
+            </p>
+            <p>
+              <a class="mks_button mks_button_small squared" href="#" target="_self">Submit your video</a>
+            </p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
